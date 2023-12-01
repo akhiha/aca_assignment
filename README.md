@@ -9,9 +9,11 @@
 - Code File: `1a.c`
 
 - Commands to run for executing the file in Ubuntu
-  - ```shell
+  - Compile the file
+    ```shell
     gcc -fopenmp -o 1a 1a.c```
-  - ```shell
+  - Execute the Program
+    ```shell
     ./1a```
 
 - Output
