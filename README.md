@@ -56,5 +56,19 @@
 
     ![image](https://github.com/akhiha/aca_assignment/assets/24610167/7dac7347-98be-4751-b9aa-00a7d2325a7d)
 
- 
-  - 
+
+#### c. 
+
+- Code File: `1c.c`
+- Commands to run:
+  - Compile the file
+    ```shell
+    gcc -fopenmp -o dot_product_even_avx 1c.c -mavx``` 
+  - Execute the Program
+    ```shell
+    ./dot_product_even_avx```
+
+- Output
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/9d4f092c-1f49-46aa-871c-1a3e4afddaf9)
+
