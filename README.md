@@ -11,10 +11,12 @@
 - Commands to run for executing the file in Ubuntu
   - Compile the file
     ```shell
-    gcc -fopenmp -o 1a 1a.c```
+    gcc -fopenmp -o 1a 1a.c
+    ```
   - Execute the Program
     ```shell
-    ./1a```
+    ./1a
+    ```
 
 - Output
   
@@ -34,7 +36,8 @@
       ```
     - Execute the Program
       ```shell
-      ./dot_product_sse```
+      ./dot_product_sse
+      ```
       
   - Output
 
@@ -50,7 +53,8 @@
       ```
     - Execute the Program
       ```shell
-      ./dot_product_sse```
+      ./dot_product_sse
+      ```
 
   - Output:
 
@@ -63,10 +67,12 @@
 - Commands to run:
   - Compile the file
     ```shell
-    gcc -fopenmp -o dot_product_even_avx 1c.c -mavx``` 
+    gcc -fopenmp -o dot_product_even_avx 1c.c -mavx
+    ``` 
   - Execute the Program
     ```shell
-    ./dot_product_even_avx```
+    ./dot_product_even_avx
+    ```
 
 - Output
 
