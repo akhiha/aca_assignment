@@ -23,4 +23,38 @@
 
 #### b. Write a vectorized version of the dot product program.
 
-- Code File: ``
+- Performing the vectorized version of dot product using SSE(Streaming SIMD Extensions) and AVX(Advanced Vector Extensions) for x86 processors.
+- SSE:
+  - Code File: `1b_sse.c`
+    
+  - Commands to run:
+    - Compile the file
+      ```shell
+      gcc -fopenmp -o dot_product_sse 1b_sse.c -msse
+      ```
+    - Execute the Program
+      ```shell
+      ./dot_product_sse```
+      
+  - Output
+
+    ![image](https://github.com/akhiha/aca_assignment/assets/24610167/62b851fd-a277-4969-bd99-8d8ff0ece030)
+
+- AVX:
+  - Code File: `1b_avx.c`
+    
+  - Commands to run:
+    - Compile the file
+      ```shell
+      gcc -fopenmp -o dot_product_sse 1b_sse.c -msse
+      ```
+    - Execute the Program
+      ```shell
+      ./dot_product_sse```
+
+  - Output:
+
+    ![image](https://github.com/akhiha/aca_assignment/assets/24610167/7dac7347-98be-4751-b9aa-00a7d2325a7d)
+
+ 
+  - 
