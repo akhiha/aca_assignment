@@ -172,3 +172,119 @@
 - Output:
 
   ![image](https://github.com/akhiha/aca_assignment/assets/24610167/c2f048ad-a42b-4c83-8aa4-7772418de4ff)
+
+
+### 2. on memory hierarchies and performance counters
+
+#### a. Write a matrix-matrix (N × N) multiplication program using the usual 3d-loop and recursive strassen multiplication.
+
+** Standard 3d loop **
+
+- Code File: `2a_standard_2d_loop.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o 2a_standard_2d_loop 2a_standard_2d_loop.c
+    ```
+  - Execute the program:
+    ```shell
+    ./2a_standard_2d_loop
+
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/60614b6a-3d1d-427d-ae84-31067df8639d)
+
+
+** Recursive Strassen Multiplication **
+
+- Code File: `2a_strassen.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o 2a_strassen 2a_strassen.c
+    ```
+  - Execute the program:
+    ```shell
+    ./2a_strassen
+
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/a6752464-957f-4f16-91b3-9d44761d26eb)
+
+
+#### b. Using performance monitors compute the number of instructions executed, CPI, L1/L2/L3 cache hit ratios for various matrix dimensions N = 2k, 4 ≤ k ≤ 14.
+
+- Code File: `2b.c`
+
+- Commands to run:
+  - Compile:
+    ```shell
+    gcc -o 2b 2b.c -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./2b
+    ```
+  - Performance to meaure uing perf:
+ 
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/d94f9550-9722-49a6-b925-cacbe5a4745e)
+
+
+#### c. Write a tiled version of matrix multiplication. Using cache grind for 32 KB L1 cache, 1 MB L2 cache, line size64 bytes, find the best tile size which gives best hit ratio for matrix dimension N = 2048. Compare the hit ration using recursive matrix multiplication. Compare the instruction count in both the cases
+
+- Code File: `2c.c`
+
+- Commands to run:
+  - Compile:
+    ```shell
+    gcc -o 2c 2c.c -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./2c
+    ```
+  - Performance to meaure uing cachegrind:
+    ```shell
+    valgrind --tool=cachegrind --I1=32768,8,64 --D1=32768,8,64 --LL=1048576,16,64 ./2c
+    ```
+
+    ```shell
+    valgrind --tool=cachegrind --I1=32768,8,64 --D1=32768,8,64 --LL=1048576,16,64 ./2a_strassen
+    ```
+    
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/d1d4cd0b-9a22-4720-8fe2-5aabd68f0410)
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/5a4975af-6e05-4e2f-ab93-bc8b46c36376)
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/130b2a28-3029-4d06-9ec0-093f291fc1e9)
+
+
+### 3. For the following C-program using cache grind find the optimal cache configuration for a 2-level inclusive fully-associative LRU cache hierarchy (default read and write policies) when input size n is 4000 the following input sizes (Line size: 64 Bytes) 
+### for (i = 0; i < n - 1; i++) {
+### S1: A[i] = 0
+### for (j = 1; j < n - 1; j++)
+### S2: A[i] += 0.33*(B[i][j] * X[j])
+### }
+### Plot a 3D graph with x-axis as L1 cache size, y-axis as L2 cache size and z-axis as miss ratio.
+
+- Code File: `3.c`, `3.sh`, `script.py`, `script_plot.py`
+
+- Commands to run:
+  - ```shell
+    gcc -o 3_cache 3.c -O2
+    ```
+  - ```shell
+    python3 script.py
+    ```
+  - ```shell
+    python3 script_plot.py
+    ```
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/bb61c5cf-d28a-4725-9638-ec3e9f73745e)
