@@ -61,9 +61,10 @@
     ![image](https://github.com/akhiha/aca_assignment/assets/24610167/7dac7347-98be-4751-b9aa-00a7d2325a7d)
 
 
-#### c. 
+#### c. Write a program using vector instructions to compute the dot product of elements at even indices (Σn/2i=0x2i ∗ y2i).
 
 - Code File: `1c.c`
+  
 - Commands to run:
   - Compile the file
     ```shell
@@ -78,3 +79,96 @@
 
   ![image](https://github.com/akhiha/aca_assignment/assets/24610167/9d4f092c-1f49-46aa-871c-1a3e4afddaf9)
 
+
+#### d. Write a program to compute the memory bandwidth of your system.
+
+- Code File: `1d.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o memory_bandwidth 1d.c -mavx -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./memory_bandwidth
+    ```
+
+- Output
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/13e465f8-36ba-4ec6-99f9-47776185a575)
+
+
+#### e. Compute peak GFlops/sec for your system
+
+- Code File: `1e.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o peak_gflops 1e.c -mavx2 -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./peak_gflops 
+    ```
+
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/8dda03b7-6f3f-4c0e-bca0-bd67f5adf90d)
+
+
+#### f. For the above problems a), b), c), check if the programs are memory bound or compute bound.
+
+*a. Scalar Dot product *
+
+- Code File: `1f_a.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -fopenmp -o scalar_dot_product_bound 1f_a.c
+    ```
+  - Execute the program:
+    ```shell
+    ./scalar_dot_product_bound
+    
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/985c255a-08c8-4180-9fc8-346c80fe6916)
+
+
+*b. Vectorized Version of Dot Product *
+
+- Code File: `1f_b.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o vectorized_dot_product_bound 1f_b.c -mavx -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./vectorized_dot_product_bound
+    
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/87b0baef-7a2a-4f14-b850-92433e865d6a)
+
+
+*c. Even Indices *
+
+- Code File: `1f_c.c`
+
+- Commands to run:
+  - Compile the file using avx:
+    ```shell
+    gcc -o vectorized_dot_product_avx_even 1f_c.c -mavx -O3
+    ```
+  - Execute the program:
+    ```shell
+    ./dot_product_avx_even
+    
+- Output:
+
+  ![image](https://github.com/akhiha/aca_assignment/assets/24610167/c2f048ad-a42b-4c83-8aa4-7772418de4ff)
